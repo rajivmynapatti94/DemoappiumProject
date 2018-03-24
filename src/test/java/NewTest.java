@@ -105,6 +105,7 @@ public	WebElement backButton;
 		   //Accept the Dialog for User does not Exit
 		    			Thread.sleep(2000);
 		    	driver.switchTo().alert().accept();
+		    	System.out.println("Accepted the alert");
 		    	
 		    	
 		    
