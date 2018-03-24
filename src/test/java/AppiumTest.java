@@ -27,7 +27,7 @@ public class AppiumTest {
  caps.setCapability("app", "/Users/indianic/Library/Developer/Xcode/DerivedData/UICatalog-ggqvvxqydlozkdedvweajagquvqu/Build/Products/Debug-iphonesimulator/UICatalog.app"); 
  caps.setCapability("automationName", "XCUITest");
 driver = new IOSDriver<IOSElement>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 
 //driver.findElement(By.name("Action Sheets")).click();
