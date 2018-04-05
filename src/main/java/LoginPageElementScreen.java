@@ -1,18 +1,22 @@
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 
-public class LoginPageElementTest {
+public class LoginPageElementScreen {
 	
-	AppiumDriver<IOSElement> driver;
+	public IOSDriver driver;
 	
-	public LoginPageElementTest(AppiumDriver<IOSElement> driver){
-		this.driver=driver;
+	public LoginPageElementScreen (IOSDriver driver){
+	//PageFactory.initElements(driver, LoginPageElementScreen.class);
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
-
+	
 	
 	@iOSFindBy(xpath="//XCUIElementTypeButton[@name=\"Back Icon\"]")
 public	WebElement backButton;
@@ -45,14 +49,16 @@ public	WebElement backButton;
 	public	WebElement OtherText;
 	
 	
-	public void enter_credentails(String uid,String pass)
+	public LoginPageElementScreen  enter_credentails(String uid,String pass)
 	{
 	email.sendKeys(uid);
 	password.sendKeys(pass);
 	signInButton.click();
-	 driver.switchTo().alert().accept();
+	// driver.switchTo().alert().accept();
 	//backButton.click();
+	return this;
 	}
 
+	
 	
 }

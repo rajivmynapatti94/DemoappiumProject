@@ -113,7 +113,7 @@ public	WebElement backButton;
 		}
 		
 		
-				@AfterTest
+		//		@AfterTest
 				public void teardown(){
 
 	//End of Testing
